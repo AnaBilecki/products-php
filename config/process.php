@@ -4,14 +4,34 @@
 
     session_start();
 
-    $products = [];
+    $id;
 
-    $query = "SELECT * FROM product";
+    if (!empty($_GET)) {
+        $id = $_GET["id"];
+    }
 
-    $stmt = $conn->prepare($query);
+    if (!empty($id)) {
 
-    $stmt->execute();
+        $query = "SELECT * FROM product WHERE id = :id";
 
-    $products = $stmt->fetchAll();
+        $stmt = $conn->prepare($query);
+
+        $stmt->bindParam(":id", $id);
+
+        $stmt->execute();
+
+        $product = $stmt->fetch();
+
+    } else {
+        $products = [];
+
+        $query = "SELECT * FROM product";
+
+        $stmt = $conn->prepare($query);
+
+        $stmt->execute();
+
+        $products = $stmt->fetchAll();
+    }
 
     $conn = null;

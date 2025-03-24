@@ -22,7 +22,7 @@
                             <td scope="row"><?= $product["quantity"] ?></td>
                             <td scope="row"><?= "R$ " . $product["price"] ?></td>
                             <td class="actions">
-                                <i class="fa-regular fa-eye"></i>
+                                <a href="<?= $BASE_URL ?>/show.php?id=<?= $product["id"] ?>"><i class="fa-regular fa-eye"></i></a>
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 <i class="fa-regular fa-trash-can"></i>
                             </td>

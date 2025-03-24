@@ -4,7 +4,7 @@
     --white: #fff;
     --black: #000;
     --gray: #686868;
-    --light-gray: #b6b6b6;
+    --light-gray: #d4d4d4;
 }
 
 * {
@@ -114,4 +114,65 @@ td {
 .actions i:hover {
     color: var(--secondary-color);
     transition: ease .5s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.back-link-container {
+    margin-bottom: 30px;
+}
+
+#back-link {
+    border: 1px solid var(--gray);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.data-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.data-wrapper p {
+    font-weight: 500;
+}
+
+.date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.date-info span {
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.date-info, .date-info p, .date-info span {
+    background-color: var(--light-gray);
+    font-size: 14px;
+}
+
+.date-info-container {
+    display: flex;
+    max-width: 50%;
+    background-color: var(--light-gray);
+    padding: 10px;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.vertical-separator {
+    background-color: var(--gray);
+    width: 1px;
+    height: 60px;
 }

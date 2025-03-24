@@ -1,5 +1,6 @@
 <?php
     include_once("config/process.php");
+    include_once("config/url.php");
 ?>
 
 <!DOCTYPE html>
