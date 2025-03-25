@@ -123,6 +123,26 @@ td {
     transition: ease .5s;
 }
 
+.delete-form {
+    display: inline-block;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 5px;
+}
+
+.delete-icon {
+    color: var(--black);
+}
+
+.delete-icon:hover {
+    color: var(--secondary-color);
+    transition: ease .5s;
+}
+
 a {
     text-decoration: none;
     color: var(--black);
