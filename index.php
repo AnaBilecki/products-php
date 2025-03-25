@@ -23,7 +23,7 @@
                             <td scope="row"><?= "R$ " . $product["price"] ?></td>
                             <td class="actions">
                                 <a href="<?= $BASE_URL ?>/show.php?id=<?= $product["id"] ?>"><i class="fa-regular fa-eye"></i></a>
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                <a href="<?= $BASE_URL ?>/edit.php?id=<?= $product["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <form action="<?= $BASE_URL ?>/config/process.php" method="POST" class="delete-form">
                                     <input type="hidden" name="type" value="delete">
                                     <input type="hidden" name="id" value="<?= $product["id"] ?>">

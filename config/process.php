@@ -33,6 +33,28 @@
             }
         } else if ($data["type"] == "edit") {
 
+            $id = $data["id"];
+            $name = $data["name"];
+            $description = $data["description"];
+            $price = $data["price"];
+            $quantity = $data["quantity"];
+
+            $query = "UPDATE product SET name = :name, description = :description, price = :price, quantity = :quantity WHERE id = :id";
+
+            $stmt = $conn->prepare($query);
+
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":price", $price);
+            $stmt->bindParam(":quantity", $quantity);
+            $stmt->bindParam(":id", $id);
+
+            try {
+                $stmt->execute();
+            } catch (PDOException $ex) {
+                $error = $ex->getMessage();
+                echo "Error: $error";
+            }
         } else if ($data["type"] == "delete") {
 
             $id = $data["id"];

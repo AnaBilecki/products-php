@@ -209,7 +209,7 @@ a {
     height: 60px;
 }
 
-#create-form {
+#create-form, #edit-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
