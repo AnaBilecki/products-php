@@ -2,7 +2,7 @@
     include_once("templates/header.php");
 ?>
     <div class="container">
-        <?php include_once("templates/back-button.php") ?>
+        <?php include_once("templates/back-button.php"); ?>
         <h1>Detalhes do Produto #<?= $product["id"] ?></h1>
         <div class="data-wrapper">
             <p>Nome:</p>

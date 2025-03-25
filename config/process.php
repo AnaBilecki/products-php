@@ -1,37 +1,69 @@
 <?php
 
     include_once("connection.php");
+    include_once("url.php");
 
     session_start();
 
-    $id;
+    $data = $_POST;
 
-    if (!empty($_GET)) {
-        $id = $_GET["id"];
-    }
+    if (!empty($data)) {
 
-    if (!empty($id)) {
+        if ($data["type"] == "create") {
 
-        $query = "SELECT * FROM product WHERE id = :id";
+            $name = $data["name"];
+            $description = $data["description"];
+            $price = $data["price"];
+            $quantity = $data["quantity"];
+            
+            $query = "INSERT INTO product (name, description, price, quantity)  VALUES (:name, :description, :price, :quantity)";
 
-        $stmt = $conn->prepare($query);
+            $stmt = $conn->prepare($query);
 
-        $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":price", $price);
+            $stmt->bindParam(":quantity", $quantity);
 
-        $stmt->execute();
+            try {
+                $stmt->execute();
+            } catch (PDOException $ex) {
+                $error = $ex->getMessage();
+                echo "Error: $error";
+            }
+        }
 
-        $product = $stmt->fetch();
-
+        header("Location:" . $BASE_URL . "/../index.php");
     } else {
-        $products = [];
+        $id;
 
-        $query = "SELECT * FROM product";
+        if (!empty($_GET)) {
+            $id = $_GET["id"];
+        }
 
-        $stmt = $conn->prepare($query);
+        if (!empty($id)) {
 
-        $stmt->execute();
+            $query = "SELECT * FROM product WHERE id = :id";
 
-        $products = $stmt->fetchAll();
+            $stmt = $conn->prepare($query);
+
+            $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            $product = $stmt->fetch();
+
+        } else {
+            $products = [];
+
+            $query = "SELECT * FROM product";
+
+            $stmt = $conn->prepare($query);
+
+            $stmt->execute();
+
+            $products = $stmt->fetchAll();
+        }
     }
 
     $conn = null;

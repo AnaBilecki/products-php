@@ -2,7 +2,7 @@
     include_once("templates/header.php");
 ?>
     <div class="container">
-        <h1>Produtos</h1>
+        <h1 id="table-title">Produtos</h1>
         <?php if(count($products) > 0): ?>
             <table>
                 <thead>

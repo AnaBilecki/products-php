@@ -21,6 +21,6 @@
             <img src="img/box.png" alt="Caixa"/>
             <h3>CONTROLE DE ESTOQUE</h3>
         </div>
-        <button type="submit">Cadastrar produto</button>
+        <a id="create-link" href="<?= $BASE_URL ?>/create.php">Cadastrar produto</a>
     </header>
 

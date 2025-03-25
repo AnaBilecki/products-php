@@ -46,24 +46,31 @@ header img, h3 {
     background-color: var(--primary-color);
 }
 
-button {
+#create-link {
     color: var(--white);
     padding: 10px;
     border: none;
     border-radius: 10px;
     background-color: var(--secondary-color);
     cursor: pointer;
+    font-size: 14px;
 }
 
 .container {
     min-height: 100%;
     padding: 40px 80px;
+    place-items: center;
 }
 
 h1 {
     color: var(--secondary-color);
     margin-bottom: 20px;
     font-size: 25px;
+    width: 600px;
+}
+
+#table-title {
+    width: 100%;
 }
 
 #empty-list-container {
@@ -123,13 +130,15 @@ a {
 
 .back-link-container {
     margin-bottom: 30px;
+    width: 600px;
 }
 
 #back-link {
-    border: 1px solid var(--gray);
+    border: 1px solid var(--light-gray);
     padding: 5px;
     border-radius: 10px;
     font-size: 14px;
+    color: var(--gray);
 }
 
 .data-wrapper {
@@ -137,6 +146,8 @@ a {
     flex-direction: row;
     gap: 10px;
     margin-bottom: 10px;
+    justify-content: start;
+    width: 600px;
 }
 
 .data-wrapper p {
@@ -149,6 +160,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 600px;
 }
 
 .date-info span {
@@ -163,7 +175,7 @@ a {
 
 .date-info-container {
     display: flex;
-    max-width: 50%;
+    width: 600px;
     background-color: var(--light-gray);
     padding: 10px;
     gap: 30px;
@@ -175,4 +187,69 @@ a {
     background-color: var(--gray);
     width: 1px;
     height: 60px;
+}
+
+#create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.description-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 5px;
+    border: 1px solid var(--light-gray);
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    padding: 5px;
+    border: 1px solid var(--light-gray);
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-container a {
+    border: 1px solid var(--gray);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
 }
