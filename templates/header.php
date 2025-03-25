@@ -1,6 +1,11 @@
 <?php
     include_once("config/process.php");
     include_once("config/url.php");
+
+    if (isset($_SESSION["msg"])) {
+        $message = $_SESSION["msg"];
+        $_SESSION["msg"] = "";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +21,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toast = document.querySelector(".toast-container");
+
+            if (toast) {
+                toast.classList.add("show");
+
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 3000);
+            }
+        });
+    </script>
+    
     <header>
         <div id="header-title">
             <img src="img/box.png" alt="Caixa"/>

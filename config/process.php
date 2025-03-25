@@ -27,6 +27,7 @@
 
             try {
                 $stmt->execute();
+                $_SESSION["msg"] = "Produto cadastrado com sucesso!";
             } catch (PDOException $ex) {
                 $error = $ex->getMessage();
                 echo "Error: $error";
@@ -51,6 +52,7 @@
 
             try {
                 $stmt->execute();
+                $_SESSION["msg"] = "Produto atualizado com sucesso!";
             } catch (PDOException $ex) {
                 $error = $ex->getMessage();
                 echo "Error: $error";
@@ -67,6 +69,7 @@
 
             try {
                 $stmt->execute();
+                $_SESSION["msg"] = "Produto removido com sucesso!";
             } catch (PDOException $ex) {
                 $error = $ex->getMessage();
                 echo "Error: $error";

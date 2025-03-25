@@ -2,6 +2,11 @@
     include_once("templates/header.php");
 ?>
     <div class="container">
+        <?php if(isset($message) && $message != ""): ?>
+            <div class="toast-container">
+                <p id="message"><?= $message ?></p>
+            </div>
+        <?php endif; ?>
         <h1 id="table-title">Produtos</h1>
         <?php if(count($products) > 0): ?>
             <table>

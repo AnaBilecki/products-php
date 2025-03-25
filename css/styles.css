@@ -5,6 +5,7 @@
     --black: #000;
     --gray: #686868;
     --light-gray: #d4d4d4;
+    --success: #a8d897;
 }
 
 * {
@@ -60,6 +61,31 @@ header img, h3 {
     min-height: 100%;
     padding: 40px 80px;
     place-items: center;
+}
+
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: 80px;
+    background-color: var(--success);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-container.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#message {
+    font-size: 14px;
+    background-color: var(--success);
 }
 
 h1 {
