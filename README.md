@@ -1,4 +1,4 @@
-# Recipes
+# Product Inventory
 
 This is a simple product inventory project developed in PHP. The goal is to allow users to create, view, update and delete products. Additionally, it was built to strengthen the understanding of PHP with PDO (PHP Data Objects).
 
