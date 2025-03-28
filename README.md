@@ -30,7 +30,8 @@ $ git clone https://github.com/AnaBilecki/products-php.git
 2. Start XAMPP and make sure Apache and MySQL are running.
 3. Move the project files to the XAMPP htdocs folder.
 4. Create a new database named inventory.
-5. Access the application in your browser at: http://localhost/products-php.
+5. Import the database schema into the inventory database.
+6. Access the application in your browser at: http://localhost/products-php.
 
 ## Author
 
